@@ -20,12 +20,18 @@
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test --watchAll",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "lint": "eslint src --color",
+        "prettier": "prettier src --check",
+        "check-types": "tsc --pretty --noEmit",
+        "husky-install": "husky install",
+        "pre-commit": "lint-staged && npm run check-types && npm run test"
     },
-    "husky": {
-        "hooks": {
-            "pre-commit": "npm run test"
-        }
+    "lint-staged": {
+        "*.{ts,tsx}": [
+            "npm run check-lint",
+            "npm run format"
+        ]
     },
     "eslintConfig": {
         "extends": [
@@ -46,7 +52,12 @@
         ]
     },
     "devDependencies": {
-        "cross-env": "^7.0.3",
-        "husky": "^7.0.4"
+        "@typescript-eslint/eslint-plugin": "^5.10.0",
+        "@typescript-eslint/parser": "^5.10.0",
+        "eslint": "^8.7.0",
+        "eslint-plugin-react": "^7.28.0",
+        "husky": "^7.0.4",
+        "lint-staged": "^12.2.2",
+        "prettier": "^2.5.1"
     }
 }
