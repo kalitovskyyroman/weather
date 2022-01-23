@@ -21,8 +21,9 @@
         "build": "react-scripts build",
         "test": "react-scripts test --watchAll=false",
         "eject": "react-scripts eject",
-        "lint": "eslint src --color",
+        "check-lint": "eslint src --color",
         "prettier": "prettier src --check",
+        "format": "prettier --ignore-unknown --write .",
         "check-types": "tsc --pretty --noEmit",
         "husky-install": "husky install",
         "pre-commit": "lint-staged && npm run check-types && npm run test"
@@ -30,7 +31,8 @@
     "lint-staged": {
         "*.{ts,tsx}": [
             "npm run check-lint",
-            "npm run format"
+            "npm run format",
+            "npm run prettier"
         ]
     },
     "eslintConfig": {
