@@ -20,8 +20,8 @@ jobs:
 
             - run: npm install
             - run: npm run build
-                env:
-                    REACT_APP_API_KEY: ${{ secrets.REACT_APP_API_KEY }}
+              env:
+                  REACT_APP_API_KEY: ${{ secrets.REACT_APP_API_KEY }}
 
             - name: Deploy
               uses: crazy-max/ghaction-github-pages@v1
