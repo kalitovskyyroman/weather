@@ -1,0 +1,7 @@
+.container {
+    margin-top: 24px;
+
+    :global(.MuiTypography-root) {
+        font-weight: 500;
+    }
+}

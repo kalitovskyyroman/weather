@@ -1,5 +1,28 @@
 .container {
+    padding-top: 196px;
     margin-bottom: 24px;
+
+    .image {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .temp {
+        display: flex;
+
+        :global(.MuiTypography-root) {
+            font-size: 96px;
+        }
+
+        .circle {
+            margin-top: 10px;
+            height: 19px;
+            width: 19px;
+            border: #0e1645 3px solid;
+            border-radius: 50%;
+        }
+    }
 
     .location,
     .condition {

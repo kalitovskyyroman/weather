@@ -1,6 +1,7 @@
 @import "/src/styles/consts/colors.module.scss";
 
 .container {
+    position: relative;
     background-color: $static-background;
     min-height: 100vh;
     padding-left: 24px;
