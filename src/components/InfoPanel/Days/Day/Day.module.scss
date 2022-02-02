@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+
+    .temp {
+        display: flex;
+
+        p:last-child {
+            color: #565b6d;
+            margin-left: 17px;
+        }
+    }
+}
