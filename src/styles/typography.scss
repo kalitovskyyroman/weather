@@ -1,0 +1,21 @@
+.MuiTypography-root {
+    &.bold {
+        font-weight: 600;
+    }
+
+    &.MuiTypography-h1 {
+        font-size: 32px;
+    }
+
+    &.MuiTypography-h2 {
+        font-size: 24px;
+    }
+
+    &.MuiTypography-body1 {
+        font-size: 16px;
+    }
+
+    &.MuiTypography-body2 {
+        font-size: 14px;
+    }
+}

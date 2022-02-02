@@ -10,7 +10,7 @@ jobs:
             - uses: actions/checkout@v1
 
             - name: Install Dependencies
-              run: npm install
+              run: npm ci
 
             - name: Run Tests
               run: npm run test
@@ -25,4 +25,4 @@ jobs:
               run: npm install
 
             - name: Run Build
-              run: npm run build
+              run: CI=false npm run build
