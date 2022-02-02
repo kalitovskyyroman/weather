@@ -57,8 +57,8 @@ const BaseLayout = () => {
     useEffect(() => {
         (async () => {
             const resultResp = await getForecast();
-            setCurrentWeather(resultResp?.current);
-            setLocation(resultResp?.location);
+            setCurrentWeather(resultResp.current);
+            setLocation(resultResp.location);
         })();
     }, []);
 
