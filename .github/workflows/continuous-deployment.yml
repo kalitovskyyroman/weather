@@ -19,7 +19,7 @@ jobs:
                   node-version: "16.x"
 
             - run: npm install
-            - run: npm run build
+            - run: CI=false npm run build
               env:
                   REACT_APP_API_KEY: ${{ secrets.REACT_APP_API_KEY }}
 
