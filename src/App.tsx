@@ -1,26 +1,13 @@
 import { ThemeProvider } from "@mui/material";
-import { useEffect, useState } from "react";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { hot } from "react-hot-loader/root";
 import BaseLayout from "./pages/BaseLayout";
-import getForecast from "./services/forecastService";
 import theme from "./theme";
 
-const App = () => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [result, setResult] = useState();
+const App = () => (
+    <ThemeProvider theme={theme}>
+        <BaseLayout />
+    </ThemeProvider>
+);
 
-    useEffect(() => {
-        (async () => {
-            const resultResp = await getForecast();
-            setResult(resultResp);
-            console.log(resultResp);
-        })();
-    }, []);
-
-    return (
-        <ThemeProvider theme={theme}>
-            <BaseLayout />
-        </ThemeProvider>
-    );
-};
-
-export default App;
+export default hot(App);

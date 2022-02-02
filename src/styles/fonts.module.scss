@@ -1,8 +1,8 @@
 @font-face {
     font-family: "Urbanist", sans-serif;
-    src: url("https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600&display=swap");
+    src: url("https://fonts.googleapis.com/css2?family=Roboto&family=Urbanist:wght@400;500;600&display=swap");
 }
 
 :export {
-    defaultFontFace: Urbanist, sans-serif;
+    defaultFontFace: Urbanist, Roboto, sans-serif;
 }

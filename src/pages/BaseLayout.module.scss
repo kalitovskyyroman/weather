@@ -1,0 +1,8 @@
+@import "/src/styles/consts/colors.module.scss";
+
+.container {
+    background-color: $static-background;
+    min-height: 100vh;
+    padding-left: 24px;
+    padding-right: 24px;
+}

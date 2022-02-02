@@ -1,0 +1,19 @@
+@import "/src/styles/consts/colors.module.scss";
+
+.chips {
+    display: flex;
+
+    :global(.MuiChip-root) {
+        max-height: 24px;
+        background-color: $dark-blue;
+        color: white;
+
+        span {
+            font-family: Roboto, sans-serif;
+        }
+    }
+
+    div:first-child {
+        margin-right: 24px;
+    }
+}
