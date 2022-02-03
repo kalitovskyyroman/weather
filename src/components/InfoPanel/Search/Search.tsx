@@ -17,8 +17,10 @@ const Search = ({ handleSearchStateChange }: ISearch) => {
 
     const handleSearch = (e: ChangeEvent<HTMLInputElement>) => setSearch(e.target.value);
     const handleSelect = (e: SyntheticEvent<Element, Event>, value: string | null) => {
-        localStorage.setItem("lastLocation", value!);
-        handleSearchStateChange(value!);
+        if (value) {
+            localStorage.setItem("lastLocation", value);
+            handleSearchStateChange(value);
+        }
     };
 
     const debouncedSearch = debounce(handleSearch, 400);
