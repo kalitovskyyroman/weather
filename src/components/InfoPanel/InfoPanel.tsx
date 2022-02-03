@@ -10,12 +10,21 @@ interface IInfoPanel {
     windSpeed: number;
     humidity: number;
     forecastday: IForecastday[];
+    handleSearchStateChange: (state: string) => void;
 }
 
-const InfoPanel = ({ temp, location, condition, windSpeed, humidity, forecastday }: IInfoPanel) => (
+const InfoPanel = ({
+    temp,
+    location,
+    condition,
+    windSpeed,
+    humidity,
+    forecastday,
+    handleSearchStateChange,
+}: IInfoPanel) => (
     <div>
         <CurrentInfo temp={temp} location={location} condition={condition} windSpeed={windSpeed} humidity={humidity} />
-        <Search />
+        <Search handleSearchStateChange={handleSearchStateChange} />
         <Days days={forecastday} />
     </div>
 );

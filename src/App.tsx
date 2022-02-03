@@ -4,10 +4,16 @@ import { hot } from "react-hot-loader/root";
 import BaseLayout from "./pages/BaseLayout";
 import theme from "./theme";
 
-const App = () => (
-    <ThemeProvider theme={theme}>
-        <BaseLayout />
-    </ThemeProvider>
-);
+const App = () => {
+    if (!localStorage.getItem("lastLocation")) {
+        localStorage.setItem("lastLocation", "London");
+    }
+
+    return (
+        <ThemeProvider theme={theme}>
+            <BaseLayout />
+        </ThemeProvider>
+    );
+};
 
 export default hot(App);
