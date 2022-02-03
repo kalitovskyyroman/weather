@@ -2,9 +2,9 @@ import get from "../api/http";
 
 const ENDPOINT = "forecast";
 
-async function getForecast(days = 3) {
+async function getForecast(location: string, days = 3) {
     return get<any>(ENDPOINT, {
-        q: "London",
+        q: location,
         days,
         aqi: "no",
         alerts: "no",

@@ -12,7 +12,12 @@ const Days = ({ days }: IDays) => (
     <div className={styles.container}>
         <Typography variant="h2">Next {days.length} days</Typography>
         {days.map(day => (
-            <Day key={day.date_epoch} date={day.date} maxTemp={day.day.maxtemp_c} minTemp={day.day.mintemp_c} />
+            <Day
+                key={day.date_epoch}
+                date={day.date}
+                maxTemp={Math.round(day.day.maxtemp_c)}
+                minTemp={Math.round(day.day.mintemp_c)}
+            />
         ))}
     </div>
 );
