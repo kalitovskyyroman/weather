@@ -1,34 +1,22 @@
-import { Typography } from "@mui/material";
-import classNames from "classnames";
-import Chips from "./Chips/Chips";
-
-import cloud from "../../assets/images/conditions/cloud.svg";
-import styles from "./InfoPanel.module.scss";
+import IForecastday from "../../interfaces/IForecastday";
+import CurrentInfo from "./CurrentInfo/CurrentInfo";
+import Days from "./Days/Days";
+import Search from "./Search/Search";
 
 interface IInfoPanel {
+    temp: number;
     location: string;
     condition: string;
     windSpeed: number;
     humidity: number;
-    temp: number;
+    forecastday: IForecastday[];
 }
 
-const InfoPanel = ({ location, condition, windSpeed, humidity, temp }: IInfoPanel) => (
-    <div className={styles.container}>
-        <img className={styles.image} src={cloud} alt="Cloud" />
-        <div className={styles.temp}>
-            <Typography className="bold" variant="h1">
-                {temp}
-            </Typography>
-            <div className={styles.circle} />
-        </div>
-        <Typography className={classNames(styles.location, "bold")} variant="h1">
-            {location}
-        </Typography>
-        <Typography className={styles.condition} variant="body1">
-            {condition}
-        </Typography>
-        <Chips windSpeed={windSpeed} humidity={humidity} />
+const InfoPanel = ({ temp, location, condition, windSpeed, humidity, forecastday }: IInfoPanel) => (
+    <div>
+        <CurrentInfo temp={temp} location={location} condition={condition} windSpeed={windSpeed} humidity={humidity} />
+        <Search />
+        <Days days={forecastday} />
     </div>
 );
 
